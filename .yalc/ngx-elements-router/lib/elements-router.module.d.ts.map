@@ -1,0 +1,1 @@
+{"version":3,"file":"elements-router.module.d.ts","sources":["elements-router.module.d.ts"],"names":[],"mappings":";;;;AAAA;;;AACA","sourcesContent":["export declare class ElementsRouterModule {\n}\n"]}

@@ -1,0 +1,35 @@
+import { Router } from '@angular/router';
+import { Observable, Subject, Subscription } from 'rxjs';
+import { RouterEvent } from './router-event.type';
+/**
+ * Registers the routing feature on the entry component of a micro frontend.
+ *
+ * ```
+ * export class ExampleComponent implements OnChanges, OnDestroy {
+ *   @Input() route?: string;
+ *   @Output() routeChange = new EventEmitter<string>();
+ *   route$ = new Subject<string | undefined>;
+ *   private destroyed$ = new Subject<void>();
+ *   constructor(private entryRoutingService: EntryRoutingService) {
+ *     this.entryRoutingService.registerRouting(this.routeChange, this.route$, this.destroyed$);
+ *   }
+ *   ngOnDestroy() {
+ *     this.destroyed$.next();
+ *   }
+ *   ngOnChanges() {
+ *     this.route$.next(this.route);
+ *   }
+ * ```
+ */
+import * as ɵngcc0 from '@angular/core';
+export declare class EntryRoutingService {
+    private router;
+    constructor(router: Router);
+    registerRouting(outgoingRoute$: Subject<RouterEvent>, incomingRoute$: Observable<string | undefined>): Subscription;
+    registerIncomingRouting(incomingRoute$: Observable<string | undefined>): Subscription;
+    registerOutgoingRouting(outgoingRoute$: Subject<RouterEvent>): Subscription;
+    isFromPlatform(): boolean;
+    static ɵfac: ɵngcc0.ɵɵFactoryDef<EntryRoutingService, never>;
+}
+
+//# sourceMappingURL=entry-routing.service.d.ts.map
